@@ -20,7 +20,17 @@
 // #Output
 // The middle character(s) of the word represented as a string.
 
+//Solution 1
 String getMiddle(String s) {
+  if (s.length % 2 == 0) {
+    return ((s.length ~/ 2 < 0) ? '' : s[s.length ~/ 2 - 1]) + s[s.length ~/ 2];
+  } else {
+    return s[s.length ~/ 2];
+  }
+}
+
+//Solution 2
+String getMiddlee(String s) {
   if (s.length % 2 == 0) {
     var firstIndex = (s.length ~/ 2) - 1;
     var lastIndex = (s.length ~/ 2) + 1;
@@ -38,4 +48,6 @@ void main() {
   print(getMiddle('dart'));
   print(getMiddle('flutter'));
   print(getMiddle('B'));
+  print(getMiddle('middle'));
+  // print(getMiddle('')); // add if
 }

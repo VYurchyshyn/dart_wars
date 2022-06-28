@@ -1,4 +1,5 @@
-// My grandfather always predicted how old people would get, and right before he passed away he revealed his secret!
+// My grandfather always predicted how old people would get, and right before he
+// passed away he revealed his secret!
 
 // In honor of my grandfather's memory we will write a function using his formula!
 
@@ -27,4 +28,5 @@ int predictAge(int age1, int age2, int age3, int age4, int age5, int age6,
 void main() {
   print(predictAge(55, 100, 88, 85, 77, 67, 81, 92));
   print(predictAge(65, 60, 75, 55, 60, 63, 64, 45));
+  print(predictAge(-12, 2, -23, -11, -10, -1, 2, -1));
 }
