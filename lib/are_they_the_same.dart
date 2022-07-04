@@ -36,23 +36,52 @@
 // Note for C
 // The two arrays have the same size (> 0) given as parameter in function comp.
 
+import 'dart:math';
+
 bool comp(List<int> a1, List<int> a2) {
-  if (a1.length != a2.length) {
-    return false;
-  } else {
-    for (var element in a1) {
-      if (a2.contains(element * element)) {
-        a2.remove(element * element);
-      }
-    }
-    if (a2.isNotEmpty) {
-      return false;
+  // if (a1.length != a2.length) {
+  //   return false;
+  // } else {
+  for (var element in a1) {
+    if (a2.contains(element * element)) {
+      a2.remove(element * element);
     }
   }
+  if (a2.isNotEmpty) {
+    return false;
+  }
+//  }
   return true;
 }
 
+bool comp2(List<int> a1, List<int> a2) {
+  return a2.every((element) => a1.contains(sqrt(element)));
+}
+
 void main() {
+  //print(comp2(, []));
+  print(comp2([
+    121,
+    144,
+    19,
+    161,
+    19,
+    144,
+    19,
+    11
+  ], [
+    11 * 11,
+    121 * 121,
+    144 * 144,
+    19 * 19,
+    161 * 161,
+    19 * 19,
+    144 * 144,
+    19 * 19
+  ]));
+  print(comp2([190, 473, 426, 216, 165, 111],
+      [181476, 12321, 223729, 27225, 36100, 46656]));
+  print(comp2([9, 6, 1, 5, 2, 5], [81, 36, 1, 25, 4, 25, 26]));
   print(comp([
     121,
     144,

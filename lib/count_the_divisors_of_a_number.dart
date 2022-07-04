@@ -23,11 +23,16 @@ int divisors(n) {
 }
 
 int oneMoreDivisors(n) =>
-    List<int>.generate(n, (i) => i + 1).where((e) => n % e == 0).length;
+    List<int>.generate((n / 2).round(), (i) => i + 1)
+        .where((e) => n % e == 0)
+        .length +
+    1;
 
 void main() {
   print(divisors(11));
   print(divisors(500001));
   print(oneMoreDivisors(11));
+  print(oneMoreDivisors(12));
+  print(divisors(12));
   print(divisors(30));
 }
