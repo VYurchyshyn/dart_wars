@@ -11,29 +11,39 @@
 // Should return: 160 (the only even number)
 
 int find(List<int> integers) {
-  if (integers.isEmpty) {
+  if (integers.length <= 2) {
     return 0;
   }
-  var even = [];
-  var odd = [];
-
-  for (var i = 0; i < integers.length; i += 1) {
-    if (integers[i] % 2 == 0) {
-      even.add(integers[i]);
+  if (integers[0] % 2 == integers[1] % 2) {
+    return integers.firstWhere((element) => element % 2 != integers[0] % 2);
+  } else {
+    if (integers[0] % 2 == integers[2] % 2) {
+      return integers[1];
     } else {
-      odd.add(integers[i]);
+      return integers[0];
     }
   }
+  //var conditionValue =
+  // var even = [];
+  // var odd = [];
 
-  if (even.length > odd.length) {
-    return odd[0];
-  } else if (even.length == odd.length) {
-    return 0;
-  } else if (even.isEmpty || odd.isEmpty) {
-    return 0;
-  } else {
-    return even[0];
-  }
+  // for (var i = 0; i < integers.length; i += 1) {
+  //   if (integers[i] % 2 == 0) {
+  //     even.add(integers[i]);
+  //   } else {
+  //     odd.add(integers[i]);
+  //   }
+  // }
+
+  // if (even.length > odd.length) {
+  //   return odd[0];
+  // } else if (even.length == odd.length) {
+  //   return 0;
+  // } else if (even.isEmpty || odd.isEmpty) {
+  //   return 0;
+  // } else {
+  //   return even[0];
+  // }
 }
 
 void main() {

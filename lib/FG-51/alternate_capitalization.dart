@@ -8,18 +8,29 @@
 // Good luck!
 
 List<String> capitalize(String x) {
-  if (x.contains(RegExp(r'[a-z]'))) {
-    List<String> evenLine = x.split('');
-    List<String> oddLine = x.split('');
-    for (var i = 0; i < x.split('').length; i++) {
-      i.isEven
-          ? evenLine[i] = evenLine[i].toUpperCase()
-          : oddLine[i] = oddLine[i].toUpperCase();
-    }
-    return [evenLine.join(), oddLine.join()];
-  } else {
+  if (!x.contains(RegExp(r'[a-z]'))) {
     return ['Transform array to lower case or with lower case letters'];
   }
+
+  // List<String> evenLine = x.split('');
+  // List<String> oddLine = x.split('');
+  //for (var i = 0; i < x.split('').length; i++) {
+  //   i.isEven
+  //       ? evenLine[i] = evenLine[i].toUpperCase()
+  //       : oddLine[i] = oddLine[i].toUpperCase();
+  // }
+  // return [evenLine.join(), oddLine.join()];
+  return x.split('').fold(['', ''], (previousValue, element) {
+    var evenLine = previousValue[0].length.isEven;
+    previousValue[0] = evenLine
+        ? previousValue[0] + element.toUpperCase()
+        : previousValue[0] + element;
+    previousValue[1] = !evenLine
+        ? previousValue[1] + element.toUpperCase()
+        : previousValue[1] + element;
+
+    return previousValue;
+  });
 }
 
 void main() {
