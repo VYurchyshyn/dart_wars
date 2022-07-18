@@ -17,6 +17,9 @@
 // true if Arthur need to invite more women, false otherwise.
 
 bool inviteMoreWomen(List<int> l) {
+  if (l.isEmpty || l.any((element) => element == 0)) {
+    return throw Exception('No empty, no 0');
+  }
   int counter = 0;
   for (var element in l) {
     {
@@ -29,4 +32,6 @@ bool inviteMoreWomen(List<int> l) {
 void main() {
   print(inviteMoreWomen([1, -1, 1]));
   print(inviteMoreWomen([-1, 2, -3, 4, -5, -7]));
+  print(inviteMoreWomen([]));
+  print(inviteMoreWomen([0, 1]));
 }

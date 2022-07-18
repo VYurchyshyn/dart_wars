@@ -12,6 +12,14 @@
 // rgb(0, 0, 0)       // returns 000000
 // rgb(148, 0, 211)   // returns 9400D3
 
+// 16 = 1 * 10 + 6 * 1
+// 253 = 2 * 10 * 10 + 5 * 10 + 3 * 1
+
+// 16 = 1 * 16 + 6 * 1
+// 253 = 2 * 16 * 16 + 5 * 16 + 3 * 1
+
+// cafe
+
 String rgb(int r, int g, int b) {
   r = (r > 0) ? r : 0;
   g = (g > 0) ? g : 0;
@@ -23,6 +31,15 @@ String rgb(int r, int g, int b) {
   return '${r.toRadixString(16).padLeft(2, '0')}${g.toRadixString(16).padLeft(2, '0')}${b.toRadixString(16).padLeft(2, '0')}'
       .toUpperCase();
 }
+// 0123456789ABCDEF
+// 9(10) = 9(16)
+// 15(10) = F(16)
+// 16(10) = 10(16)
+// 30(10) = 12(16)
+// 31(10) = 1F(16)
+// 32(10) = 20(16)
+// 33(10) = 21(16)
+// 253(10) = FD(16)
 
 void main() {
   print(rgb(0, 0, 0));

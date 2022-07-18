@@ -4,7 +4,7 @@
 // Task
 // Given a positive integer N , Return the extra perfect numbers in range from 1 to N .
 
-List<int> extraPerfect(n) {
+List<int> extraPerfect(int n) {
   if (n > 0) {
     List<int> list = [];
     for (int i = 1; i <= n; i++) {
@@ -14,7 +14,7 @@ List<int> extraPerfect(n) {
     }
     return list;
   } else {
-    return [];
+    return throw Exception('Put positive int from 1 to N');
   }
 }
 
